@@ -27,57 +27,48 @@
 <script type="text/javascript" src="${ctx}/js/react-dom.js"></script>
 <script type="text/javascript" src="${ctx}/js/browser.min.js"></script>
 <!-- Javascript -->
-<script type="text/javascript" src="${ctx}/js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="${ctx}/js/common/common.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $.login = {};
-        $.extend($.login, {
-            commit: function () {
-                var uname = $("#uname").val();
-                var pwd = $('#pwd').val();
-                $.common.ajaxPost({
-                    url: "login",
-                    data: {
-                        uname: uname,
-                        pwd: pwd
-                    },
-                    callBack: function (data) {
-                        console.log("success");
-                    },
-                    errorCallBack: function (data) {
-                        console.log("false");
-                    }
-                });
+<%--<script type="text/javascript" src="${ctx}/js/jquery-1.10.1.min.js"></script>--%>
+<%--<script type="text/javascript" src="${ctx}/js/common/common.js"></script>--%>
+<%--<script type="text/javascript">--%>
+    <%--$(function () {--%>
+        <%--$.login = {};--%>
+        <%--$.extend($.login, {--%>
+            <%--commit: function () {--%>
+                <%--var uname = $("#uname").val();--%>
+                <%--var pwd = $('#pwd').val();--%>
+                <%--$.common.ajaxPost({--%>
+                    <%--url: "login",--%>
+                    <%--data: {--%>
+                        <%--uname: uname,--%>
+                        <%--pwd: pwd--%>
+                    <%--},--%>
+                    <%--callBack: function (data) {--%>
+                        <%--console.log("success");--%>
+                    <%--},--%>
+                    <%--errorCallBack: function (data) {--%>
+                        <%--console.log("false");--%>
+                    <%--}--%>
+                <%--});--%>
 
-            }
-        });
-    });
-</script>
+            <%--}--%>
+        <%--});--%>
+    <%--});--%>
+<%--</script>--%>
 <script type="text/babel">
+
     var MyComponent = React.createClass({
-                handleClick: function () {
-                    this.refs.myTextInput.focus();
-                },
-                render: function () {
-                    return (
-                            < div >
-                            < input
-                    type = "text"
-                    ref = "myTextInput" / >
-                            < input
-                    type = "button"
-                    value = "Focus the text input"
-                    onClick = {this.handleClick
-                } / >
-                < / div >
-    );
-    }
+        handleClick: function () {
+            this.refs.myTextInput.focus();
+        },
+        render: function () {
+            return (
+                    <div>
+                        <input type="text" ref="myTextInput"/>
+                        <input type="button" value="Focus the text input" onClick={this.handleClick}/>
+                    </div>);
+        }
     });
 
-    ReactDOM.render(
-    < MyComponent / >,
-            document.getElementById('example')
-    );
+    ReactDOM.render(<MyComponent/>, document.getElementById('example'));
 </script>
 </html>
