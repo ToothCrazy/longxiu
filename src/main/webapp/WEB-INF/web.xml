@@ -58,7 +58,7 @@
     </servlet-mapping>
     <context-param>
         <param-name>webAppRootKey</param-name>
-        <param-value>ct-web.root</param-value>
+        <param-value>false</param-value>
     </context-param>
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>

@@ -2,7 +2,7 @@
  * 
  */
 
-$(function() {
+(function($) {
 	$.common = {};
 	$.extend($.common, {
 		ajaxPost : function(option) {
@@ -36,4 +36,4 @@ $(function() {
 
 		}
 	});
-});
+})(jQuery);
